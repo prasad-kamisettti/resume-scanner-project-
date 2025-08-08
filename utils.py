@@ -18,7 +18,7 @@ def preprocess_text(text):
     # Remove punctuation
     text = text.translate(str.maketrans("", "", string.punctuation))
 
-    #Break into words
+    #Break into words using tokenize 
     words = word_tokenize(text)
 
     #Remove stopwords and keep only words (ignore numbers/symbols)
