@@ -5,7 +5,8 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 # Load the spaCy English model
-nlp = spacy.load("en_core_web_sm")
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 
 # Load stopwords from NLTK
 stop_words = set(stopwords.words("english"))
