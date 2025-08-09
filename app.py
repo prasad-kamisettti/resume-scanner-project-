@@ -20,11 +20,11 @@ if uploaded_file and jd_input:
         with open("temp_resume.pdf", "wb") as f:
             f.write(uploaded_file.read())
 
-        # Extract and preprocess resume
+        # Extract and preprocess the resume
         resume_text = extract_text_from_pdf("temp_resume.pdf")
         cleaned_resume = preprocess_text(resume_text)
 
-        # Preprocess JD
+        # Preprocess the jd 
         cleaned_jd = preprocess_text(jd_input)
 
         # TF-IDF + Cosine Similarity
@@ -45,7 +45,7 @@ if uploaded_file and jd_input:
             st.subheader("❌ Missing Keywords from Resume:")
             st.write(", ".join(missing_keywords))
         else:
-            st.success("🎉 Your resume contains all keywords from the JD!")
+            st.success("Your resume contains all keywords from the JD!")
 
 else:
     st.info("Please upload a resume and paste a job description to get started.")
